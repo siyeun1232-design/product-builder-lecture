@@ -16,7 +16,36 @@
         <div id="start-screen" class="retro-card">
             <h1>포지션 테스트</h1>
             <p>간단한 테스트를 통해 당신에게 어울리는 포지션을 알아보세요!</p>
-            <button id="start-btn">테스트 시작</button>
+            <div class="button-group">
+                <button id="start-btn">테스트 시작</button>
+                <button id="inquiry-btn" class="secondary-btn">제휴 문의하기</button>
+            </div>
+        </div>
+
+        <!-- 제휴 문의 폼 -->
+        <div id="inquiry-container" class="hidden">
+            <div class="retro-card">
+                <h2>🤝 제휴 문의</h2>
+                <p>협업 및 비즈니스 문의를 남겨주세요.</p>
+                <form action="https://formspree.io/f/xbdpygbj" method="POST" id="inquiry-form">
+                    <div class="input-group">
+                        <label for="name">이름/기업명</label>
+                        <input type="text" id="name" name="name" placeholder="성함 또는 기업명을 입력해주세요" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">이메일 주소</label>
+                        <input type="email" id="email" name="_replyto" placeholder="example@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">문의 내용</label>
+                        <textarea id="message" name="message" rows="5" placeholder="문의하실 내용을 상세히 적어주세요" required></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit">문의 보내기</button>
+                        <button type="button" id="back-to-start" class="secondary-btn">돌아가기</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <!-- 테스트 컨테이너 -->

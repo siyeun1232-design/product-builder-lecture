@@ -406,7 +406,10 @@ const userAnswers = [];
 const startScreen = document.getElementById('start-screen');
 const testContainer = document.getElementById('test-container');
 const resultContainer = document.getElementById('result-container');
+const inquiryContainer = document.getElementById('inquiry-container');
 const startBtn = document.getElementById('start-btn');
+const inquiryBtn = document.getElementById('inquiry-btn');
+const backToStartBtn = document.getElementById('back-to-start');
 const questionsContainer = document.getElementById('questions-container');
 const progressBar = document.getElementById('progress-bar');
 
@@ -424,6 +427,7 @@ if (startBtn) {
         startScreen.classList.add('hidden');
         testContainer.classList.remove('hidden');
         resultContainer.classList.add('hidden');
+        inquiryContainer.classList.add('hidden');
 
         shuffleArray(questions);
         questions.forEach(q => shuffleArray(q.options));
@@ -434,8 +438,20 @@ if (startBtn) {
 
         displayQuestion();
     });
-} else {
-    console.error("Start button not found!");
+}
+
+if (inquiryBtn) {
+    inquiryBtn.addEventListener('click', () => {
+        startScreen.classList.add('hidden');
+        inquiryContainer.classList.remove('hidden');
+    });
+}
+
+if (backToStartBtn) {
+    backToStartBtn.addEventListener('click', () => {
+        inquiryContainer.classList.add('hidden');
+        startScreen.classList.remove('hidden');
+    });
 }
 
 function displayQuestion() {

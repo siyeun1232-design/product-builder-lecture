@@ -101,17 +101,74 @@ button {
     transition: all 0.1s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    width: 100%;
 }
 
-button:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--shadow-color);
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.secondary-btn {
+    background: var(--accent-secondary);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: #3b82f6;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--shadow-color);
 }
 
 #start-btn, #restart-btn {
     background: var(--accent-primary);
-    color: white; /* Or black depending on contrast, white on red looks good */
+    color: white;
     text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+/* Form Styles */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.input-group input, .input-group textarea {
+    font-family: inherit;
+    padding: 12px 15px;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    background: white;
+    outline: none;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: var(--accent-secondary);
+    box-shadow: 4px 4px 0px var(--accent-secondary);
+}
+
+#inquiry-container h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+#inquiry-container p {
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: var(--text-secondary);
 }
 
 #start-btn:hover, #restart-btn:hover {
